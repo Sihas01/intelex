@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../css/navbar.css';
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
 
@@ -9,7 +10,12 @@ const Navbar = () => {
     setNav(!nav);
   };
   return (
-    <div className="bg-slate-950 sticky top-0 w-full z-20">
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="bg-slate-950 sticky top-0 w-full z-20"
+    >
 
 
       <nav className='text-white flex justify-between items-center px-[24px] lg:px-[51px] py-5'>
@@ -17,12 +23,12 @@ const Navbar = () => {
           INTELEX
         </div>
 
-        <div class="lg:hidden flex items-center" onClick={handleNav}>
-          <button class="mobile-menu-button" >
+        <div className="lg:hidden flex items-center" onClick={handleNav}>
+          <button className="mobile-menu-button" >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>bars-3-bottom-left</title>
               <g fill="none">
-                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
               </g>
             </svg>
           </button>
@@ -32,18 +38,18 @@ const Navbar = () => {
 
         <div className="nav-items hidden lg:block">
           <ul className='flex gap-4 text-base text-[#dfecfa] font-body font-medium items-center'>
-            <li className='cursor-pointer'>Products </li>
-            <li className='cursor-pointer'>Why</li>
-            <li className='cursor-pointer'>Customers</li>
-            <li className='cursor-pointer'>Category</li>
-            <li className='cursor-pointer'>Pricing</li>
-            <li className='cursor-pointer'>About us</li>
+            <li className='cursor-pointer hover:text-purple-400 transition-colors'>Products </li>
+            <li className='cursor-pointer hover:text-purple-400 transition-colors'>Why</li>
+            <li className='cursor-pointer hover:text-purple-400 transition-colors'>Customers</li>
+            <li className='cursor-pointer hover:text-purple-400 transition-colors'>Category</li>
+            <li className='cursor-pointer hover:text-purple-400 transition-colors'>Pricing</li>
+            <li className='cursor-pointer hover:text-purple-400 transition-colors'>About us</li>
 
           </ul>
         </div>
 
         <div className="login text-[#dfecfa] hidden lg:block">
-          <div class="wrapper ">
+          <div className="wrapper ">
             <a href="#" className='buttonOne'><span>GET STATED</span></a>
           </div>
 
@@ -61,7 +67,7 @@ const Navbar = () => {
           <div className="brand font-title lg:text-2xl text-2xl text-center mt-5 mb-5">
             INTELEX
           </div>
-<hr />
+          <hr />
           {/* Mobile Navigation Items */}
 
           <li className='p-4 border-b rounded-xl hover:bg-[#ccbdee18] duration-300 hover:text-white cursor-pointer border-none mt-12'>Products</li>
@@ -72,16 +78,16 @@ const Navbar = () => {
           <li className='p-4 border-b rounded-xl hover:bg-[#ccbdee18] duration-300 hover:text-white cursor-pointer border-none '>About us</li>
 
           <div className="login text-[#dfecfa] mt-5 mx-12">
-          <div class="wrapper ">
-            <a href="#" className='buttonOne'><span>GET STATED</span></a>
+            <div className="wrapper ">
+              <a href="#" className='buttonOne'><span>GET STATED</span></a>
+            </div>
+
+
           </div>
-
-
-        </div>
 
         </ul>
       </nav>
-    </div>
+    </motion.div>
   )
 }
 
