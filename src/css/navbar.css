@@ -1,0 +1,43 @@
+
+.buttonOne{
+    display: block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .60s;
+    border-radius: 16px;
+  }
+  
+  .buttonOne span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .buttonOne:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(175, 102, 248, 0.932);
+    transition: all .35s;
+    border-radius: 16px;
+    
+
+  }
+  
+  .buttonOne:hover{
+    color: #fff;
+    border: none;
+  }
+  
+  .buttonOne:hover:after{
+    width: 100%;
+  }
